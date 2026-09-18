@@ -1,0 +1,32 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "290reEmxKKeP5cxjSnN5Q"
+uri = "file://.local/conversation-workspace/files/attached_assets/quick-swap-simulator.html"
+type = "text"
+title = "Quick Swap Simulator"
+description = "The extracted interactive HTML simulator from your archive."
+logical_id = "4bbb5d87-7119-4a3d-b4cd-ba9ea15186f7"
+content_hash = "sha256:f323808a293c9bda5f27e5e2211342a4698dd09f5e368867dffabe8a1d36ac9f"
+size = 686633
+mtime_ms = 1788639166503
+storage_uri = "gcs://replit-rams-assets-kirk/rams/assets/conversation:ca426b23-12eb-41fa-a929-20067b100be4/4bbb5d87-7119-4a3d-b4cd-ba9ea15186f7/d75dd268-6cb2-47ad-a639-2751d2703a4e"
+storage_version_token = "1788639169559791"
+content_type = "text/html"
+source_uri = "file://attached_assets/quick-swap-simulator.html"
+
+[[outputs]]
+id = "PQf7XUfTRixiOaBrUASK-"
+uri = "file://.local/conversation-workspace/files/attached_assets/quick-swap-simulator-preview.png"
+type = "image"
+title = "Quick Swap Simulator Preview"
+description = "Browser-rendered preview of the interactive simulator."
+logical_id = "a987b4b2-045f-4efd-87e6-fddf57303b41"
+content_hash = "sha256:8765fe62a4c49036cfb96574ef0ea3cf03856b2f409261a39f46085cfa1597a5"
+size = 19220
+mtime_ms = 1788639293301
+storage_uri = "gcs://replit-rams-assets-kirk/rams/assets/conversation:ca426b23-12eb-41fa-a929-20067b100be4/a987b4b2-045f-4efd-87e6-fddf57303b41/c91a640b-22a1-4242-b6f7-6ddd8cc95ad8"
+storage_version_token = "1788639297432784"
+content_type = "image/png"
+source_uri = "file://attached_assets/quick-swap-simulator-preview.png"

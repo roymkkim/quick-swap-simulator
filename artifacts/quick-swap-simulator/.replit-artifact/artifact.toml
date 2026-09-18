@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Quick Swap Simulator"
+description = "An interactive swap-flow simulator with a phone preview and adjustable states for testing wallet exchange experiences."
+version = "1.0.0"
+id = "artifacts/quick-swap-simulator"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21188
+
+[services.development]
+run = "pnpm --filter @workspace/quick-swap-simulator run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/quick-swap-simulator", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/quick-swap-simulator/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21188"
+BASE_PATH = "/"
