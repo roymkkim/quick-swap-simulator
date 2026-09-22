@@ -116,6 +116,10 @@ export function installTradingViewChart(
   ).forEach((el) => {
     el.style.background = '#000';
   });
+  const tokenDetailsFooter = frameDocument.querySelector<HTMLElement>(
+    '.absolute.bottom-0.left-0.right-0.z-20',
+  );
+  if (tokenDetailsFooter) tokenDetailsFooter.style.background = '#000';
 
   const originalChart = frameDocument.querySelector<SVGElement>(
     'svg[viewBox="0 0 360 240"]',
