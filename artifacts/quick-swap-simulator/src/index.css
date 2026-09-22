@@ -261,7 +261,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-black text-foreground;
   }
 }
 
@@ -269,6 +269,7 @@ html,
 body,
 #root {
   min-height: 100%;
+  background: #000;
 }
 
 button,
