@@ -2294,15 +2294,19 @@ export function installTradingViewChart(
     crosshairTimeTag.style.top = `${pane.height + timeAxisHeight / 2}px`;
     crosshairTimeTag.style.transform = 'translate(-50%, -50%)';
   };
+  const isLineScrubbing = () =>
+    activeMode === 'line' &&
+    Boolean(lastCrosshairParam?.point && lastCrosshairParam.time !== undefined);
+
   const updateHeaderPrice = (param: MouseEventParams) => {
     lastCrosshairParam = param.point ? param : undefined;
-    updateChartTags(lastCrosshairParam);
+    updateLiveDot();
   };
 
   const pointerCursorStyle = frameDocument.createElement('style');
-  const tapCursor = `url("data:image/svg+xml,${encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="#BAF24A" fill-opacity=".95" stroke="#131416" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="#131416"/></svg>',
-  )}") 12 12, pointer`;
+  const tapCursor = `url("data:image/svg+xml;utf8,${encodeURIComponent(
+    "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='16' cy='16' r='11' fill='rgba(255,255,255,0.25)'/></svg>",
+  )}") 16 16, pointer`;
   pointerCursorStyle.textContent = `
     html,
     body,
@@ -2437,7 +2441,7 @@ export function installTradingViewChart(
   chartHost.append(liveDot);
 
   const updateLiveDot = () => {
-    if (!activeSeries || activeMode !== 'line') {
+    if (!activeSeries || activeMode !== 'line' || isLineScrubbing()) {
       liveDot.style.display = 'none';
       updateChartTags(lastCrosshairParam);
       return;

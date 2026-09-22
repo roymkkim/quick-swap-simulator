@@ -270,6 +270,14 @@ body,
 #root {
   min-height: 100%;
   background: #000;
+  cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='rgba(255,255,255,0.25)'/%3E%3C/svg%3E")
+      16 16,
+    pointer;
+}
+
+html *,
+body * {
+  cursor: inherit;
 }
 
 button,
